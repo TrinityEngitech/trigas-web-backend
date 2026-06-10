@@ -42,6 +42,10 @@ app.use(
   "/api/careers",
  require("./Routes/careerRoutes")
 );
+app.use(
+  "/api/career-applications",
+ require("./Routes/careerApplicationRoutes")
+);
 
 // Start the server
 app.listen(port, (err) => {
