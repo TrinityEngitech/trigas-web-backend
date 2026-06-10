@@ -47,6 +47,11 @@ app.use(
  require("./Routes/careerApplicationRoutes")
 );
 
+app.use(
+  "/uploads",
+  express.static("uploads")
+);
+
 // Start the server
 app.listen(port, (err) => {
   if (err) {

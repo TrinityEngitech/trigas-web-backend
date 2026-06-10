@@ -9,9 +9,25 @@ exports.createApplication = async (
 ) => {
   try {
     const application =
-      await CareerApplication.create(
-        req.body
-      );
+      await CareerApplication.create({
+        careerId: req.body.careerId,
+        fullName: req.body.fullName,
+        email: req.body.email,
+        mobile: req.body.mobile,
+        currentLocation:
+          req.body.currentLocation,
+        experience:
+          req.body.experience,
+
+        resume: {
+          fileName:
+            req.file.originalname,
+          filePath: req.file.path,
+        },
+
+        coverLetter:
+          req.body.coverLetter,
+      });
 
     res.status(201).json({
       success: true,

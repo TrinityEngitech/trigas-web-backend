@@ -1,7 +1,4 @@
-// model/CareerApplication.js
-
 const mongoose = require("mongoose");
-
 const careerApplicationSchema = new mongoose.Schema(
   {
     careerId: {
@@ -13,20 +10,16 @@ const careerApplicationSchema = new mongoose.Schema(
     fullName: {
       type: String,
       required: true,
-      trim: true,
     },
 
     email: {
       type: String,
       required: true,
-      trim: true,
-      lowercase: true,
     },
 
     mobile: {
       type: String,
       required: true,
-      trim: true,
     },
 
     currentLocation: {
@@ -40,8 +33,8 @@ const careerApplicationSchema = new mongoose.Schema(
     },
 
     resume: {
-      type: String,
-      required: true,
+      fileName: String,
+      filePath: String,
     },
 
     coverLetter: {

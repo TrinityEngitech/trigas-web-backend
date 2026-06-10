@@ -14,7 +14,15 @@ const {
   "../Controller/careerApplicationController"
 );
 
-router.post("/", createApplication);
+const uploadResume = require(
+  "../middleware/uploadResume"
+);
+
+router.post(
+  "/",
+  uploadResume.single("resume"),
+  createApplication
+);
 
 router.get("/", getAllApplications);
 
