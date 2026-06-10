@@ -38,6 +38,10 @@ app.use(methodOverride("_method"));
 
 // Routes
 app.use("/", require("./Routes/route"));
+app.use(
+  "/api/careers",
+ require("./Routes/careerRoutes")
+);
 
 // Start the server
 app.listen(port, (err) => {
